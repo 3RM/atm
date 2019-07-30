@@ -10,6 +10,7 @@ use yii\grid\GridView;
 ?>
 <div class="row">
     <div class="col-lg-12">
+        <?php if($dataProvider->totalCount > 0): ?>
         <?= GridView::widget([
             'dataProvider' => $dataProvider,
             'filterModel' => $searchModel,
@@ -65,6 +66,9 @@ use yii\grid\GridView;
                 'full_address',
             ],
         ]); ?>
+        <?php else: ?>
+            <?= "<h1>Пусто</h1>" ?>
+        <?php endif; ?>
     </div>
 </div>
 
